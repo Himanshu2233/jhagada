@@ -1,48 +1,61 @@
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- replaced FA 4.7 with FA 6 (CSS) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sandhya Interiors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Main_container">
-        <nav class="Nav_container">
-            <ul class="Nav_list">
-                <li><img src="img/Logo.png" alt="image" srcset="" class="Logo"></li>  
-                <li class="Nav_item"><a href="#">Interior</a></li>
-                <li class="Nav_item"><a href="#">Exterior</a></li>
-                <li class="Nav_item"><a href="#">Awards</a></li>
-            </ul>
-            <ul class="Nav_list social_icons">
-                <li class="Nav_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li class="Nav_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li class="Nav_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            </ul>
-            <ul class="Nav_list ">
-                <li><button class="Enter_Btn">Enter</button></li>
-                <li><button><i class="fa-solid fa-envelope Mail_btn"></i>Connect</button></li>
-            </ul>
-        </nav>
-        <section class="Home_text">
-            <div class="Home_text_container">
-                <h1>Sandhya's Interior</h1>
-                <p>We make your interior more beautiful</p>
-                <a href="#">Get an extension<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </section>
-        <footer class="footer">
-            <div class="profile-d">
-                <span><img src="img/account.png" alt="account" srcset="" class="Profile-img"></span>
-                <p class="name">Sandhya Sapkota|Design Expert</p>
-            </div>
-            <img src="img/mouse.svg" alt="image" srcset="" class="mouse">
-            
+  <div class="hero">
+    <div class="overlay"></div>
 
+    <nav class="Nav_container">
+        <div class="nav-left">
+            <img src="img/Logo.png" alt="logo" class="Logo">
+        <span class="brand">CAS</span>
+        <ul class="Nav_list nav-center">
+            <li class="Nav_item"><a href="#">Interior</a></li>
+            <li class="Nav_item"><a href="#">Exterior</a></li>
+            <li class="Nav_item"><a href="#">Awards</a></li>
+        </ul>
+      </div>
 
-        </footer>
-    </div>
+      
+
+      <div class="nav-right">
+        <ul class="Nav_list social_icons">
+          <li class="Nav_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="Nav_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li class="Nav_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+
+        <div class="actions">
+          <button class="Enter_Btn">Enter</button>
+          <button class="Connect_Btn"><i class="fa-solid fa-envelope Mail_btn"></i> Connect</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="Home_text">
+      <div class="Home_text_container">
+        <h1><span>Sapkota’s</span><br><span>Interiors</span></h1>
+        <p class="subtitle">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a class="cta" href="#">Get an Extension <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="profile-d">
+        <img src="img/account.png" alt="account" class="Profile-img">
+        <p class="name">Sandhya Sapkota <span class="role">| Design Expert</span></p>
+      </div>
+
+      <img src="img/mouse.svg" alt="scroll" class="mouse">
+    </footer>
+  </div>
 </body>
 </html>

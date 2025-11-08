@@ -1,75 +1,359 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(img/bg.jpg);
-    background-size: cover;
-    background-position: center;
-    
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Poppins", Arial, sans-serif;
+  background-image: url("img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color:#fff;
 }
-.Nav_item a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    /* font-weight: bold; */
+
+/* Hero wrapper to contain overlay and content */
+.hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  
 }
-.Nav_item a:hover{
-    color: #ff6347;
+
+/* Slight dark overlay so white text reads well */
+.overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+  pointer-events:none;
 }
-.social_icons{
-    margin-left: 990px;
-} 
+
+
 .Nav_container{
-    display: flex;
-    justify-content: space-between;
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  right: 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:10;
 }
-.Nav_list{
-    display: flex;
-    list-style: none;
-    gap: 30px;
+
+.nav-left{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap:50px;
+  margin-left: 0;
 }
 .Logo{
-    width: 25px;
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  padding:6px;
 }
+.brand{
+    font-size:24px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#fff;
+  margin-left: -40px;
+}
+
+.Nav_list{
+  display:flex;
+  list-style:none;
+  gap:24px;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.nav-center .Nav_item a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  opacity:0.95;
+}
+.nav-center .Nav_item a:hover{
+  color:#6ec1ff;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+.social_icons .Nav_item a{
+  color:#fff;
+  /* display:inline-flex; */
+  width:34px;
+  height:34px;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+.social_icons .Nav_item a:hover{
+  color:#ff7913;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.Enter_Btn{
+  background: rgba(255, 255, 255, 0.056);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.18);
+  padding:8px 16px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:600;
+}
+.Enter_Btn:hover{
+    color: #ff7913;
+    background: rgba(217, 202, 202, 0.18);
+    transform: scale(1.25);
+    transition: all 0.3s ease;
+}
+.Connect_Btn{
+  background: rgba(255, 255, 255, 0.492);
+  border:none;
+  padding:8px 12px;
+  color:#fff;
+  border-radius:20px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  cursor:pointer;
+}
+.Connect_Btn:hover{
+    background: rgba(217, 202, 202, 0.25);
+    color: #ff7913;
+    transform: scale(1.25);
+    transition: all 0.3s ease;
+}
+
 .Home_text{
-    height: 320px;
+  position:relative;
+  z-index:2;
+  min-height:calc(80vh - 120px);
 }
 .Home_text_container{
-    text-align: center;
-    margin-top: 150px;
-    color: white;
+  position:absolute;
+  right:70px;
+  top:40%;
+  transform:translateY(-50%);
+  max-width:520px;
+  color:#fff;
 }
-.footer{
-    display: flex;
-    /* text-align: center; */
-    margin-top: 240px;
+.Home_text_container h1{
+  margin:0 0 18px -80px;
+  font-size:110px;
+  line-height:0.9;
+  letter-spacing: -2px;
+  font-weight:800;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
-.mouse{
-    width: 30px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+.Home_text_container .subtitle{
+  margin:0 0 18px 0;
+  font-size:13px;
+  color:rgba(255,255,255,0.9);
+  max-width:420px;
+  display:inline-block;
+}
+.cta{
+  color:#5bc1ff;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.cta:hover,
+.cta:focus{
+  transform: translateX(0 20px) scale(1.02);
+  color: #39a8db;
+  text-shadow: 0 8px 20px rgba(91,193,255,0.10);
+  /* transform: translate(0 80px); */
+    transition: all 0.3s ease;
 }
 
-.profile-d{
-    width: 120px;
-    display: flex;
-    justify-content: space-between;
+/* Footer profile left + mouse center bottom */
+.footer{
+  position:absolute;
+  left:24px;
+  right:24px;
+  bottom:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:10;
 }
-.profile-img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.profile-d{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.Profile-img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.12);
 }
 .name{
-    font-size: 15px;
-    /* font-weight: bold; */
-    margin: 13px 10px 0px 10px;
-    padding: 0;
-    white-space: nowrap;
-    width: 80px;
+  margin:0;
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+}
+.name .role{font-weight:400;color:rgba(255,255,255,0.85);font-size:13px}
+
+
+.mouse{
+  width:30px;
+  opacity:0.95;
+  margin: 0 830px 0 0;
+  position:relative;
+  /* animation: float up/down and subtle fade */
+  animation: mouse-float 2.6s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
+@keyframes mouse-float{
+  0%   { transform: translateY(0);   opacity: 0.98; }
+  20%  { transform: translateY(6px);  opacity: 0.75; }
+  50%  { transform: translateY(0);   opacity: 0.98; }
+  80%  { transform: translateY(-3px); opacity: 0.88; }
+  100% { transform: translateY(0);   opacity: 0.98; }
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width:1000px){
+  .Home_text_container h1{font-size:72px}
+  .Home_text_container{right:40px; max-width:360px}
+}
+@media (max-width:700px){
+  .Nav_container{top:14px; left:14px; right:14px}
+  .nav-center{display:none}
+  .Home_text_container{position:static; transform:none; text-align:center; margin-top:140px; padding:0 20px}
+  .Home_text_container h1{font-size:46px}
+  .footer{left:14px; right:14px; bottom:12px}
+}
+
+
+
+/* Entrance animations --------------------------------------------------*/
+/* initial page fade */
+.hero{
+  opacity:0;
+  animation: page-fade 0.9s ease-out 0s forwards;
+}
+
+/* overlay subtle rise and fade */
+.overlay{
+  opacity:0;
+  transform: translateY(6px);
+  animation: overlay-in 0.9s ease-out 0s forwards;
+}
+
+/* nav slides down */
+.Nav_container{
+  transform: translateY(-10px);
+  opacity:0;
+  animation: nav-slide 0.7s cubic-bezier(.2,.9,.3,1) 0.12s forwards;
+}
+
+/* stagger center nav items */
+.nav-center .Nav_item{
+  opacity:0;
+  transform: translateY(-6px);
+  animation: nav-item-in 0.56s cubic-bezier(.2,.9,.3,1) forwards;
+}
+.nav-center .Nav_item:nth-child(1){ animation-delay: 0.28s; }
+.nav-center .Nav_item:nth-child(2){ animation-delay: 0.36s; }
+.nav-center .Nav_item:nth-child(3){ animation-delay: 0.44s; }
+
+/* socials + action buttons appear slightly later */
+.social_icons .Nav_item, .actions { 
+  opacity:0;
+  transform: translateY(-6px);
+  animation: nav-item-in 0.56s cubic-bezier(.2,.9,.3,1) forwards;
+}
+.social_icons .Nav_item:nth-child(1){ animation-delay:0.42s; }
+.social_icons .Nav_item:nth-child(2){ animation-delay:0.50s; }
+.social_icons .Nav_item:nth-child(3){ animation-delay:0.58s; }
+.actions{ animation-delay:0.66s; }
+
+/* hero text pops in from the right/bottom */
+.Home_text_container{
+  opacity:0;
+  transform: translateY(18px) translateX(10px) scale(0.995);
+  animation: text-pop 0.9s cubic-bezier(.2,.9,.3,1) 0.5s forwards;
+}
+
+/* footer fades in a bit later */
+.footer{
+  opacity:0;
+  transform: translateY(10px);
+  animation: footer-in 0.8s ease-out 0.9s forwards;
+}
+
+/* CTA subtle entrance + soft pulse */
+.cta{
+  opacity:0;
+  transform: translateY(6px);
+  animation: cta-in 0.7s ease-out 1.05s forwards;
+}
+
+/* small hover pulse for CTA to attract attention */
+.cta:hover{
+  transform: translateY(0) scale(1.02);
+}
+
+/* Keyframes */
+@keyframes page-fade{
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes overlay-in{
+  0% { opacity:0; transform: translateY(8px) scale(1.02); }
+  60% { opacity:0.7; transform: translateY(2px) scale(1.005); }
+  100% { opacity:1; transform: translateY(0) scale(1); }
+}
+@keyframes nav-slide{
+  from { opacity:0; transform: translateY(-12px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+@keyframes nav-item-in{
+  0% { opacity:0; transform: translateY(-8px) scale(0.995); }
+  60% { opacity:0.85; transform: translateY(2px) scale(1.01); }
+  100% { opacity:1; transform: translateY(0) scale(1); }
+}
+@keyframes text-pop{
+  0% { opacity:0; transform: translateY(18px) translateX(10px) scale(0.995); filter: blur(6px); }
+  60% { opacity:0.92; transform: translateY(-6px) translateX(4px) scale(1.01); filter: blur(1px); }
+  100% { opacity:1; transform: translateY(0) translateX(0) scale(1); filter: blur(0); }
+}
+@keyframes footer-in{
+  from { opacity:0; transform: translateY(12px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+@keyframes cta-in{
+  0% { opacity:0; transform: translateY(8px) scale(0.995); }
+  100% { opacity:1; transform: translateY(0) scale(1); }
+}
+
+/* make sure animations don't run on small view instantly when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero, .overlay, .Nav_container, .nav-center .Nav_item, .social_icons .Nav_item, .actions, .Home_text_container, .footer, .cta {
+    animation: none !important;
+    transition: none !important;
+  }
+}
