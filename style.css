@@ -24,6 +24,7 @@ body {
 .Nav_container{
     display: flex;
     justify-content: space-between;
+    margin-left: 10px;
 }
 .Nav_list{
     display: flex;
@@ -35,11 +36,35 @@ body {
 }
 .Home_text{
     height: 320px;
+    width: 600px;
+    margin: auto;
+    font-size: 30px;
 }
 .Home_text_container{
     text-align: center;
     margin-top: 150px;
     color: white;
+}
+h1{
+    font-size: 148px;
+    margin: 0;
+    padding: 0;
+}
+.btn{
+    
+    color: #00EEFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.fa-solid {
+    color: white;
+    margin-left: 10px;
+    
 }
 .footer{
     display: flex;
